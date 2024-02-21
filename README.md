@@ -64,87 +64,43 @@ For `class Simple` create a file with ending `***.ts`, like `simple.ts`
 
 ## Project structure
 
-Split the project logic into the modules. Give them a name according to the business rules without prefix `_`, fore example `user-info`
+There are different way we can structure our project.
+Some of them includes
+1. Feature based
+2. Layer based
 
-Group the folders inside module like this:
-
-```
-`_components` - components
-    `_smart` - smart components
-    `_dumb` - dumb components
-`_providers` - providers
-`_models` - models ( object value inetrfaces and classes )
-`_pipes` - pipes
-`_directives` - directives
-`_guards` - guards
-`_resolvers` - resolvers
-`_store` - Redux ( ngxs example )
-    `actions` = the models of actions
-    `models` = the models of states and theris default values
-    `states` =  the actions effects and their selectors
-`_constants` - constants
-`_services` - services
-    `facade` - facade
-    `api` - rest services
-`user-info` - nested module
+### Layer based project structure
 ```
 
-Give names to nested modules due to business logic.
-
-`user-info`
-`details`
-
-Give names to components modules by business logic without `_`
-
-Mocks store inside production folders
-
-For example: [project-folder-sturcture](https://github.com/evoytenkoapps/angular-best-practices/tree/master/examples/src/app/components/project-folder-sturcture)
-
-```
-├───user-info
-│   │   user-info.module.ts
+├───app
 │   │
-│   ├───user-software
-│   ├───_components
-│   │   ├───_dumb
-│   │   │   └───user-info-details
-│   │   │           user-info-details.component.css
-│   │   │           user-info-details.component.html
-│   │   │           user-info-details.component.spec.ts
-│   │   │           user-info-details.component.ts
-│   │   │
-│   │   └───_smart
-│   │       └───user-info
-│   │               user-info.component.css
-│   │               user-info.component.html
-│   │               user-info.component.spec.ts
-│   │               user-info.component.ts
 │   │
-│   ├───_constants
-│   ├───_directives
-│   ├───_guards
-│   ├───_models
-│   ├───_pipes
-│   ├───_providers
-│   │       uesr-http.provider.ts
-│   │       user-info.provider.ts
-│   │
-│   ├───_resolvers
-│   ├───_services
-│   │   ├───api
-│   │   │       user-http-mock.service.ts
-│   │   │       user-http-prod.service.ts
-│   │   │       user-http.service.ts
-│   │   │
-│   │   └───facade
-│   │           user-ngxs.facade.ts
-│   │           user.facade.ts
-│   │
-│   └───_store
-│       ├───actions
-│       ├───models
-│       └───states
-└───user-story
+│   ├───configs
+│   ├───core
+│   │     │
+│   │     ├───constant
+│   │     ├───data
+│   │     ├───guard
+│   │     ├───interceptor
+│   │     ├───service
+│   │     └───utils
+│   ├───pages
+│   │     │
+│   │     ├───constant
+│   │     ├───data
+│   │     ├───guard
+│   │     ├───interceptor
+│   │     ├───service
+│   │     └───utils
+│   └───shared
+│         │
+│         ├───component
+│         └───service
+│
+├───environments
+└───assets
+
+
 ```
 
 ## Interfaces
